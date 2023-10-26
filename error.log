@@ -1,0 +1,2 @@
+10/26/2023, 12:24:28 PM [ERROR]: Error in updating featureset: TypeError: Bind parameters must not contain undefined. To pass SQL NULL specify JS null
+10/26/2023, 12:53:03 PM [ERROR]: Error in updating featureset: TypeError: Bind parameters must not contain undefined. To pass SQL NULL specify JS null
