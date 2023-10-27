@@ -1,4 +1,5 @@
 const PORT = 8080;
+const {v4: uuidv4} = require("uuid");
 describe("testing the whole bunch of different apis", () => {
   it("testing the user_controllers", () => {
     let nr = Math.random().toFixed(2)
@@ -97,30 +98,7 @@ describe("testing the whole bunch of different apis", () => {
           const user_uuid = res.body.user.user_uuid;
 
 
-          //now doing it for the customer update
-          // const updatedData= {
-          //   first_name:"piyush",
-          //   last_name:"akotkar",
-          //   email:"piyush@starkenn.com",
-          //   company_name:"starkenn Technoloies",
-          //   address:"malik nagar",
-          //   state:"seth jii",
-          //   city: "gumnaam",
-          //   pincode: 411038,
-          //   phone: 9897875655,
-          //   userUUID: user_uuid,
-          // }
-          // cy.request({
-          //   method: 'PUT',
-          //   url: `http://localhost:${PORT}/api/customers/update-customer/${user_uuid}`,
-          //   headers: {
-          //     authorization: `bearer ${token}`
-          //   },
-          //   updatedData
-          // }).then((res)=>{
-          //   cy.log(res.message);
-          // })
-
+         
           //doing for get customer by id
           cy.request({
             method: 'GET',
@@ -438,111 +416,111 @@ describe("testing the whole bunch of different apis", () => {
           let featureSetLink = `http://localhost:${PORT}/api/featuresets`;
           //add featureset
            let featuresetBody = {
-            "user_uuid": user_uuid,
-            "featureset_name": "Raghu Featureset",
-            "featureset_users": [
+            user_uuid: customer_uuid,
+            featureset_name: "Raghu Featureset",
+            featureset_users: [
                 {
                     "user_uuid": customer_uuid
                 }
             ],
-            "featuerset_version": 1,
-            "featureset_data": {
-                "mode": "1",
-                "CASMode": "1",
-                "activationSpeed": "10",
-                "alarmThreshold": "2",
-                "brakeThreshold": "0.5",
-                "brakeSpeed": "40",
-                "detectStationaryObject": "1",
-                "allowCompleteBrake": "1",
-                "detectOncomingObstacle": "1",
-                "safetyMode": "1",
-                "ttcThreshold": "10",
-                "brakeOnDuration": "1000",
-                "brakeOffDuration": "1000",
-                "start_time": "12",
-                "stop_time": "12",
-                "sleepAlertMode": "1",
-                "preWarning": "5",
-                "sleepAlertInterval": "60",
-                "sa_activationSpeed": "40",
-                "startTime": "23",
-                "stopTime": "6",
-                "brakeActivateTime": "10",
-                "braking": "1",
-                "driverEvalMode": "1",
-                "maxLaneChangeThreshold": "0.35",
-                "minLaneChangeThreshold": "-0.35",
-                "maxHarshAccelerationThreshold": "0.25",
-                "minHarshAccelerationThreshold": "-0.4",
-                "suddenBrakingThreshold": "-0.4",
-                "maxSpeedBumpThreshold": "0.5",
-                "minSpeedBumpThreshold": "-0.5",
-                "GovernerMode": "1",
-                "speedLimit": "100",
-                "cruiseMode": "1",
-                "cruiseactivationSpeed": "40",
-                "vehicleType": "1",
-                "obdMode": "1",
-                "protocolType": "0",
-                "tpmsMode": "1",
-                "acceleratorType": "1",
-                "VS_brk_typ": "1",
-                "VS_gyro_type": "1",
-                "lazerMode": "1",
-                "rfSensorMode": "1",
-                "rfAngle": "0",
-                "rdr_act_spd": "40",
-                "rdr_type": "1",
-                "Sensor_res1": "1",
-                "speedSource": "1",
-                "slope": "4.5",
-                "offset": "0.5",
-                "delay": "30",
-                "rfNameMode": "1",
-                "noAlarm": "30",
-                "speed": "30",
-                "accelerationBypass": "10",
-                "tim_err_tpms": "1",
-                "rfSensorAbsent": "60",
-                "gyroscopeAbsent": "60",
-                "hmiAbsent": "60",
-                "timeNotSet": "59",
-                "brakeError": "60",
-                "tpmsError": "60",
-                "obdAbsent": "60",
-                "noAlarmSpeed": "60",
-                "laserSensorAbsent": "60",
-                "rfidAbsent": "60",
-                "iotAbsent": "60",
-                "acc_board": "60",
-                "SBE_dd": "60",
-                "SBE_alcohol": "60",
-                "SBE_temp": "60",
-                "firmwareOtaUpdate": "1",
-                "firewarereserver1": "0",
-                "firewarereserver2": "0",
-                "alcoholDetectionMode": "1",
-                "alcoholinterval": "10",
-                "alcoholact_spd": "40",
-                "alcoholstart_time": "12",
-                "alcoholstop_time": "12",
-                "alcoholmode": "1",
-                "driverDrowsinessMode": "1",
-                "dd_act_spd": "40",
-                "dd_acc_cut": "1",
-                "dd_strt_tim": "12",
-                "dd_stop_tim": "12",
-                "dd_res1": "0",
-                "load_sts": "1",
-                "load_max_cap": "10",
-                "load_acc": "1",
-                "fuelMode": "1",
-                "fuel_tnk_cap": "100",
-                "fuel_intvl1": "0",
-                "fuel_intvl2": "0",
-                "fuel_acc": "1",
-                "fuel_thrsh": "10"
+            featuerset_version: 1,
+            featureset_data: {
+                mode: 1,
+                CASMode: 1,
+                activationSpeed: 10,
+                alarmThreshold: 2,
+                brakeThreshold: 0.5,
+                brakeSpeed: 40,
+                detectStationaryObject: 1,
+                allowCompleteBrake: 1,
+                detectOncomingObstacle: 1,
+                safetyMode: 1,
+                ttcThreshold: 10,
+                brakeOnDuration: 1000,
+                brakeOffDuration: 1000,
+                start_time: 12,
+                stop_time: 12,
+                sleepAlertMode: 1,
+                preWarning: 5,
+                sleepAlertInterval: 60,
+                sa_activationSpeed: 40,
+                startTime: 23,
+                stopTime: 6,
+                brakeActivateTime: 10,
+                braking: 1,
+                driverEvalMode: 1,
+                maxLaneChangeThreshold: 0.35,
+                minLaneChangeThreshold: -0.35,
+                maxHarshAccelerationThreshold: 0.25,
+                minHarshAccelerationThreshold: -0.4,
+                suddenBrakingThreshold: -0.4,
+                maxSpeedBumpThreshold: 0.5,
+                minSpeedBumpThreshold: -0.5,
+                GovernerMode: 1,
+                speedLimit: 100,
+                cruiseMode: 1,
+                cruiseactivationSpeed: 40,
+                vehicleType: 1,
+                obdMode: 1,
+                protocolType: 0,
+                tpmsMode: 1,
+                acceleratorType: 1,
+                VS_brk_typ: 1,
+                VS_gyro_type: 1,
+                lazerMode: 1,
+                rfSensorMode: 1,
+                rfAngle: 0,
+                rdr_act_spd: 40,
+                rdr_type: 1,
+                Sensor_res1: 1,
+                speedSource: 1,
+                slope: 4.5,
+                offset: 0.5,
+                delay: 30,
+                rfNameMode: 1,
+                noAlarm: 30,
+                speed: 30,
+                accelerationBypass: 10,
+                tim_err_tpms: 1,
+                rfSensorAbsent: 60,
+                gyroscopeAbsent: 60,
+                hmiAbsent: 60,
+                timeNotSet: 59,
+                brakeError: 60,
+                tpmsError: 60,
+                obdAbsent: 60,
+                noAlarmSpeed: 60,
+                laserSensorAbsent: 60,
+                rfidAbsent: 60,
+                iotAbsent: 60,
+                acc_board: 60,
+                SBE_dd: 60,
+                SBE_alcohol: 60,
+                SBE_temp: 60,
+                firmwareOtaUpdate: 1,
+                firewarereserver1: 0,
+                firewarereserver2: 0,
+                alcoholDetectionMode: 1,
+                alcoholinterval: 10,
+                alcoholact_spd: 40,
+                alcoholstart_time: 12,
+                alcoholstop_time: 12,
+                alcoholmode: 1,
+                driverDrowsinessMode: 1,
+                dd_act_spd: 40,
+                dd_acc_cut: 1,
+                dd_strt_tim: 12,
+                dd_stop_tim: 12,
+                dd_res1: 0,
+                load_sts: 1,
+                load_max_cap: 10,
+                load_acc: 1,
+                fuelMode: 1,
+                fuel_tnk_cap: 100,
+                fuel_intvl1: 0,
+                fuel_intvl2: 0,
+                fuel_acc: 1,
+                fuel_thrsh: 10
             }
         }
                 cy.request({
@@ -583,113 +561,113 @@ describe("testing the whole bunch of different apis", () => {
                     //edit featureSet
                                           
                       let editFeaturesetBody = {
-                        "user_uuid": user_uuid,
-                        "featureset_name": "Raghu Featureset",
-                        "featureset_users": [
+                        user_uuid: customer_uuid,
+                        featureset_name: "Raghu Featureset",
+                        featureset_users: [
                             {
                                 "user_uuid": customer_uuid
                             }
                         ],
-                        "featuerset_version": 1,
-                        "featureset_data": {
-                            "mode": "1",
-                            "CASMode": "1",
-                            "activationSpeed": "10",
-                            "alarmThreshold": "2",
-                            "brakeThreshold": "0.5",
-                            "brakeSpeed": "40",
-                            "detectStationaryObject": "1",
-                            "allowCompleteBrake": "1",
-                            "detectOncomingObstacle": "1",
-                            "safetyMode": "1",
-                            "ttcThreshold": "10",
-                            "brakeOnDuration": "1000",
-                            "brakeOffDuration": "1000",
-                            "start_time": "12",
-                            "stop_time": "12",
-                            "sleepAlertMode": "1",
-                            "preWarning": "5",
-                            "sleepAlertInterval": "60",
-                            "sa_activationSpeed": "40",
-                            "startTime": "23",
-                            "stopTime": "6",
-                            "brakeActivateTime": "10",
-                            "braking": "1",
-                            "driverEvalMode": "1",
-                            "maxLaneChangeThreshold": "0.35",
-                            "minLaneChangeThreshold": "-0.35",
-                            "maxHarshAccelerationThreshold": "0.25",
-                            "minHarshAccelerationThreshold": "-0.4",
-                            "suddenBrakingThreshold": "-0.4",
-                            "maxSpeedBumpThreshold": "0.5",
-                            "minSpeedBumpThreshold": "-0.5",
-                            "GovernerMode": "1",
-                            "speedLimit": "100",
-                            "cruiseMode": "1",
-                            "cruiseactivationSpeed": "40",
-                            "vehicleType": "1",
-                            "obdMode": "1",
-                            "protocolType": "0",
-                            "tpmsMode": "1",
-                            "acceleratorType": "1",
-                            "VS_brk_typ": "1",
-                            "VS_gyro_type": "1",
-                            "lazerMode": "1",
-                            "rfSensorMode": "1",
-                            "rfAngle": "0",
-                            "rdr_act_spd": "40",
-                            "rdr_type": "1",
-                            "Sensor_res1": "1",
-                            "speedSource": "1",
-                            "slope": "4.5",
-                            "offset": "0.5",
-                            "delay": "30",
-                            "rfNameMode": "1",
-                            "noAlarm": "30",
-                            "speed": "30",
-                            "accelerationBypass": "10",
-                            "tim_err_tpms": "1",
-                            "rfSensorAbsent": "60",
-                            "gyroscopeAbsent": "60",
-                            "hmiAbsent": "60",
-                            "timeNotSet": "59",
-                            "brakeError": "60",
-                            "tpmsError": "60",
-                            "obdAbsent": "60",
-                            "noAlarmSpeed": "60",
-                            "laserSensorAbsent": "60",
-                            "rfidAbsent": "60",
-                            "iotAbsent": "60",
-                            "acc_board": "60",
-                            "SBE_dd": "60",
-                            "SBE_alcohol": "60",
-                            "SBE_temp": "60",
-                            "firmwareOtaUpdate": "1",
-                            "firewarereserver1": "0",
-                            "firewarereserver2": "0",
-                            "alcoholDetectionMode": "1",
-                            "alcoholinterval": "10",
-                            "alcoholact_spd": "40",
-                            "alcoholstart_time": "12",
-                            "alcoholstop_time": "12",
-                            "alcoholmode": "1",
-                            "driverDrowsinessMode": "1",
-                            "dd_act_spd": "40",
-                            "dd_acc_cut": "1",
-                            "dd_strt_tim": "12",
-                            "dd_stop_tim": "12",
-                            "dd_res1": "0",
-                            "load_sts": "1",
-                            "load_max_cap": "10",
-                            "load_acc": "1",
-                            "fuelMode": "1",
-                            "fuel_tnk_cap": "100",
-                            "fuel_intvl1": "0",
-                            "fuel_intvl2": "0",
-                            "fuel_acc": "1",
-                            "fuel_thrsh": "12"
+                        featuerset_version: 1,
+                        featureset_data: {
+                            mode: 1,
+                            CASMode: 1,
+                            activationSpeed: 10,
+                            alarmThreshold: 2,
+                            brakeThreshold: 0.5,
+                            brakeSpeed: 40,
+                            detectStationaryObject: 1,
+                            allowCompleteBrake: 1,
+                            detectOncomingObstacle: 1,
+                            safetyMode: 1,
+                            ttcThreshold: 10,
+                            brakeOnDuration: 1000,
+                            brakeOffDuration: 1000,
+                            start_time: 12,
+                            stop_time: 12,
+                            sleepAlertMode: 1,
+                            preWarning: 5,
+                            sleepAlertInterval: 60,
+                            sa_activationSpeed: 40,
+                            startTime: 23,
+                            stopTime: 6,
+                            brakeActivateTime: 10,
+                            braking: 1,
+                            driverEvalMode: 1,
+                            maxLaneChangeThreshold: 0.35,
+                            minLaneChangeThreshold: -0.35,
+                            maxHarshAccelerationThreshold: 0.25,
+                            minHarshAccelerationThreshold: -0.4,
+                            suddenBrakingThreshold: -0.4,
+                            maxSpeedBumpThreshold: 0.5,
+                            minSpeedBumpThreshold: -0.5,
+                            GovernerMode: 1,
+                            speedLimit: 100,
+                            cruiseMode: 1,
+                            cruiseactivationSpeed: 40,
+                            vehicleType: 1,
+                            obdMode: 1,
+                            protocolType: 0,
+                            tpmsMode: 1,
+                            acceleratorType: 1,
+                            VS_brk_typ: 1,
+                            VS_gyro_type: 1,
+                            lazerMode: 1,
+                            rfSensorMode: 1,
+                            rfAngle: 0,
+                            rdr_act_spd: 40,
+                            rdr_type: 1,
+                            Sensor_res1: 1,
+                            speedSource: 1,
+                            slope: 4.5,
+                            offset: 0.5,
+                            delay: 30,
+                            rfNameMode: 1,
+                            noAlarm: 30,
+                            speed: 30,
+                            accelerationBypass: 10,
+                            tim_err_tpms: 1,
+                            rfSensorAbsent: 60,
+                            gyroscopeAbsent: 60,
+                            hmiAbsent: 60,
+                            timeNotSet: 59,
+                            brakeError: 60,
+                            tpmsError: 60,
+                            obdAbsent: 60,
+                            noAlarmSpeed: 60,
+                            laserSensorAbsent: 60,
+                            rfidAbsent: 60,
+                            iotAbsent: 60,
+                            acc_board: 60,
+                            SBE_dd: 60,
+                            SBE_alcohol: 60,
+                            SBE_temp: 60,
+                            firmwareOtaUpdate: 1,
+                            firewarereserver1: 0,
+                            firewarereserver2: 0,
+                            alcoholDetectionMode: 1,
+                            alcoholinterval: 10,
+                            alcoholact_spd: 40,
+                            alcoholstart_time: 12,
+                            alcoholstop_time: 12,
+                            alcoholmode: 1,
+                            driverDrowsinessMode: 1,
+                            dd_act_spd: 40,
+                            dd_acc_cut: 1,
+                            dd_strt_tim: 12,
+                            dd_stop_tim: 12,
+                            dd_res1: 0,
+                            load_sts: 1,
+                            load_max_cap: 10,
+                            load_acc: 1,
+                            fuelMode: 1,
+                            fuel_tnk_cap: 101,
+                            fuel_intvl1: 0,
+                            fuel_intvl2: 0,
+                            fuel_acc: 1,
+                            fuel_thrsh: 12
                         },
-                        featureset_status : 1 ,
+                        featureset_status: 1
                     }
           
                     const e = cy.wrap(res.body.results);
@@ -715,19 +693,6 @@ describe("testing the whole bunch of different apis", () => {
 
 
 
-
-          //doing it for delete customer--> this would be done in the ending of the testing
-
-          // doing it for logout
-          // cy.request({
-          //   method: 'GET',
-          //   url: `http://localhost:${PORT}/api/customers/logout`,
-          //   headers: {
-          //     authorization: `bearer ${token}`
-          //   }}).then(res=>{
-          //     cy.log(res.body.message)
-          //   })
-
         })
 
       });
@@ -741,15 +706,6 @@ describe("testing the whole bunch of different apis", () => {
 
     //doing it for delete customer--> this would be done in the ending of the testing
 
-    // doing it for logout
-    // cy.request({
-    //   method: 'GET',
-    //   url: `http://localhost:${PORT}/api/customers/logout`,
-    //   headers: {
-    //     authorization: `bearer ${token}`
-    //   }}).then(res=>{
-    //     cy.log(res.body.message)
-    //   })
 
 
     // customer side
@@ -849,19 +805,6 @@ describe("testing the whole bunch of different apis", () => {
           cy.wrap(ele).should('have.property', "user_uuid", user_uuid);
           cy.wrap(ele).should('have.property', "contact_uuid");
 
-          cy.request({
-            method: 'PUT',
-            url: `${atLink}/deletecontact/${ele.contact_uuid}`,
-            headers: {
-              authorization: `bearer ${token}`
-            },
-            body: {
-              user_uuid: user_uuid
-            }
-          }).then((res) => {
-            cy.wrap(res.body.message).should('eq', "Contacts deleted successfully");
-          })
-
           return;
 
         })
@@ -879,29 +822,43 @@ describe("testing the whole bunch of different apis", () => {
         cy.log(res.body.results)
       })
 
-      //** this function can't be tested due to email */
-      // //update profile
-      // cy.request({
-      //   method: 'PUT',
-      //   url: `${atLink1}/update-profile/${user_uuid}`,
-      //   headers: { authorization: `bearer ${token}` },
-      //   body :{first_name:'demo',
-      //     last_name:'starkenn',
-      //     email: 'demo@starkenn.com',
-      //     company_name:'stark-i',
-      //     address:'sanewadi, pune',
-      //     state: 'MH',
-      //     city: 'MH-14',
-      //     pincode:'411021',
-      //     phone:'0000998866'}
-      // }).then((res)=>{
-      //   cy.wrap(res.body.message).should('eq', "User updated successfully");
-      // })
+      
 
       //feature set
       
 
       let atLink2 = `http://localhost:${PORT}/api/vehicles`;
+
+      cy.request({
+        method: 'GET',
+        url: `http://localhost:8080/api/featuresets/get-user-featureset/${user_uuid}`,
+        headers: {
+          authorization: `bearer ${token}`
+        }
+      }).then((res)=>{
+        cy.wrap(res.body.results).each(r=>{
+          const newUuid2 = uuidv4();
+        //add vehicle
+        const addVehicle = {
+          user_uuid: user_uuid,
+          vehicle_name: 'testing_cypress',
+          vehicle_registration: newUuid2.toString(),
+          ecu: null || null,
+          iot: null || null,
+          dms: null || null,
+          featureset_uuid: r.featureset_uuid,
+    }
+        cy.request({
+          method: 'POST',
+          url: `${atLink2}/add-vehicle`,
+          headers: { authorization: `bearer ${token}` },
+          body: addVehicle
+        }).then((ress)=>{
+          cy.wrap(ress.body.message).should('eq', "Vehicle added successfully");
+        })
+
+        })
+      })
 
       //get-all-vehicle vehicle
       cy.request({
@@ -931,19 +888,22 @@ describe("testing the whole bunch of different apis", () => {
           //get featureset with user_uuid
           cy.request({
             method: 'GET',
-            url: `${atLink2}/get-user-featureset/${user_uuid}`,
+            url: `http://localhost:8080/api/featuresets/get-user-featureset/${user_uuid}`,
             headers: {
               authorization: `bearer ${token}`
             }
           }).then((res)=>{
+            cy.wrap(res.body.results).each(rr=>{
+              const newUUid3 = uuidv4();
+            cy.log("printing the featureset_uuid : " , rr.featureset_uuid)
             const editVehicleName = {
               user_uuid: user_uuid,
               vehicle_name: 'testing_cypress',
-              vehicle_registration: 'MH12ST2034',
-              ecu: 'NULL',
-              iot: "NULL",
-              dms: "DMS_NCL_16",
-              featureset_uuid: res.body.results.featureset_uuid,
+              vehicle_registration: newUUid3.toString(),
+              ecu: null || null,
+              iot: null||null,
+              dms: null|| null,
+              featureset_uuid: rr.featureset_uuid,
               vehicle_status: 1,
         }
         cy.request({
@@ -952,26 +912,8 @@ describe("testing the whole bunch of different apis", () => {
           headers: { authorization: `bearer ${token}` },
           body: editVehicleName
         })
-
-        //add vehicle
-        const addVehicle = {
-          user_uuid: user_uuid,
-          vehicle_name: 'testing_cypress',
-          vehicle_registration: 'MH12ST2034',
-          ecu: 'NULL',
-          iot: "NULL",
-          dms: "DMS_NCL_18",
-          featureset_uuid: res.body.results.featureset_uuid,
-    }
-        cy.request({
-          method: 'POST',
-          url: `${atLink2}/add-vehicle`,
-          headers: { authorization: `bearer ${token}` },
-          body: addVehicle
-        }).then((ress)=>{
-          cy.wrap(ress.body.message).should('eq', "Vehicle added successfully");
-        })
-
+        
+            })
         //get vehicle total count;
         cy.request({
           method: 'GET',
@@ -985,21 +927,13 @@ describe("testing the whole bunch of different apis", () => {
         //get vehicle data
         cy.request({
           method: 'GET',
-          url: `${atLink2}/get-vehicle-details/${vehicle_uuid}`,
+          url: `${atLink2}/get-vehicle-details/${r.vehicle_uuid}`,
           headers: { authorization: `bearer ${token}` }
         }).then((result)=>{
           cy.wrap(result.body.message).should('eq', "Successfully received vehicles count.");
         })
 
-        //delete vehicle
-        cy.request({
-          method: 'PUT',
-          url: `${atLink2}/delete-vehicle/${r.vehicle_uuid}`,
-          headers: { authorization: `bearer ${token}` },
-          body:{user_uuid: user_uuid}
-        }).then((ress)=>{
-          cy.wrap(ress.body.message).should('eq', "Successfully vehicle deleted");
-        })
+        
 
         let atLink3 = `http://localhost:${PORT}/api/alert-triggers`;
       
@@ -1014,7 +948,7 @@ describe("testing the whole bunch of different apis", () => {
       }
       cy.request({
         method: 'POST',
-        url: `${visitLink}/save-alert-trigger/${user_uuid}`,
+        url: `${atLink3}/save-alert-trigger/${user_uuid}`,
         headers: {
           authorization: `bearer ${token}`
         },
@@ -1026,7 +960,7 @@ describe("testing the whole bunch of different apis", () => {
       //get alert trigger using user_uuid
       cy.request({
         method: 'GET',
-        url: `${visitLink}/getall-alert-trigger/${user_uuid}`,
+        url: `${atLink3}/getall-alert-trigger/${user_uuid}`,
         headers: {
           authorization: `bearer ${token}`
         }
@@ -1034,27 +968,33 @@ describe("testing the whole bunch of different apis", () => {
         cy.wrap(ress.body.message).should('eq', 'Successfully got all the alert');
 
         //update alert trigger using trigger_id
-      cy.request({
-        method: 'PUT',
-        url: `${visitLink}/update-alert-trigger/${trigger_id}`,
-        headers: {
-          authorization: `bearer ${token}`
-        },
-        body: {
-          trigger_name : "test-1",
-        trigger_description: "testing purpose in cypress using portal",
-        vehicle_uuid :r.vehicle_uuid ,
-        trigger_type: "LIMP Mode",
-        selectedContacts: [{recipients:"2818fead-2839-4f2d-926f-c8a2a8be2b57",email:"micky@gmail.com"},{recipients:"90e5c468-939c-4acc-88c1-71d88423835f",email:"donald@gmail.com"},{recipients:"b8b2b7b8-a50f-4f36-bee5-5628ec3ba429",mobile:"7709993272"}],
-        }
-      }).then(ress=>{
-        cy.wrap(ress.body.message).should('eq', 'Successfully updated the alert');
-      })
+        cy.wrap(ress.body.alerts).each((eme)=>{
+          const trigger_id = eme.trigger_id;
+          const reci = JSON.stringify([{recipients:"2818fead-2839-4f2d-926f-c8a2a8be2b57",email:"micky@gmail.com"},{recipients:"90e5c468-939c-4acc-88c1-71d88423835f",email:"donald@gmail.com"},{recipients:"b8b2b7b8-a50f-4f36-bee5-5628ec3ba429",mobile:"7709993272"}]);
+          cy.request({
+            method: 'PUT',
+            url: `${atLink3}/update-alert-trigger/${trigger_id}`,
+            headers: {
+              authorization: `bearer ${token}`
+            },
+            body: {
+              trigger_name : "test-1",
+            trigger_description: "testing purpose in cypress using portal",
+            vehicle_uuid :r.vehicle_uuid ,
+            trigger_type: "LIMP",
+            recipients: reci,
+            trigger_status : 1,
+            user_uuid : user_uuid
+            }
+          }).then(ress=>{
+            cy.wrap(ress.body.message).should('eq', 'Successfully updated the alert');
+          })
+        })
 
       //delete trigger
       cy.request({
         method: 'PUT',
-        url: `${visitLink}/delete-alert-trigger/${user_uuid}`,
+        url: `${atLink3}/delete-alert-trigger/${user_uuid}`,
         headers: {
           authorization: `bearer ${token}`
         }
@@ -1150,11 +1090,112 @@ describe("testing the whole bunch of different apis", () => {
 
 
 
+      const reportLink = `http://localhost:${PORT}/api/reports`
+      //testing the reports here
+      cy.request({
+        method: 'GET',
+        url: `${reportLink}/getreports-all-vehicles/${user_uuid}`,
+        headers: {
+          authorization: `bearer ${token}`
+        }
+      }).then((res1)=>{
+        let vehicle_ids = [];
+          cy.wrap(res1.body.message).should('eq', "Successfully got list of all vehicles");
+          const vehicles  = res1.body.results || [];
+          cy.wrap(vehicles).each((e1)=>{
+            vehicle_ids.push(e1.vehicle_uuid);
+          })
+
+          //then get the contacts
+          cy.request({
+            method: 'GET',
+            url: `${reportLink}/getreports-all-contacts/${user_uuid}`,
+            headers: {
+              authorization: `bearer ${token}`
+            }
+          }).then((res2)=>{
+            let contact_ids = [];
+            cy.wrap(res2.body.message).should('eq', "Successfully Fetched List Of All Contacts");
+            const contacts = res2.body.contacts|| [];
+            cy.wrap(contacts).each((E)=>{
+              contact_ids.push(E.contact_uuid);
+            })
 
 
+            //create report
+            const c_id = contact_ids[0];
+            const reportBody = {
+              title : "testing report",
+              from_date: "2023-09-27",
+              to_date: "2023-10-27",
+              selected_vehicles: vehicle_ids || null,
+              selected_events: ["ACP", "DMS","BRk", "ACC", "LMP", "ALM"],
+              contact_uuid: c_id || null
+            }
+            cy.request({
+              method: 'POST',
+              url: `${reportLink}/createReports-all/${user_uuid}`,
+              headers: {
+                authorization: `bearer ${token}`
+              },
+              body : reportBody
+            }).then((res3)=>{
+              cy.wrap(res3.body.message).should('eq', "Report data successfully created");
+
+              //delete vehicle and contacts now
+              const reportUUID = res3.body.report_uuid;
+
+              //getting the report using report UUID
+              cy.request({
+                method: 'GET',
+                url: `${reportLink}/get_Reports/${reportUUID}`,
+                headers: {
+                  authorization: `bearer ${token}`
+                }
+              }).then((res4)=>{
+                cy.wrap(res4.body.message).should('eq', "Successfully retrieved report and tripdata for multiple vehicles");
+
+                //fetching all the reports
+                cy.request({
+                  method: 'GET',
+                  url: `${reportLink}/get_Reports-all/${user_uuid}`,
+                  headers: {
+                    authorization: `bearer ${token}`
+                  }
+                }).then((res5)=>{
+                  cy.wrap(res5.body.message).should('eq', "Successfully got list of all Reports");
+                })
+              })
+            })
+          })
+      })
 
 
-      
+        //delete vehicle
+        // cy.request({
+        //   method: 'PUT',
+        //   url: `${atLink2}/delete-vehicle/${r.vehicle_uuid}`,
+        //   headers: { authorization: `bearer ${token}` },
+        //   body:{user_uuid: user_uuid}
+        // }).then((ress)=>{
+        //   cy.wrap(ress.body.message).should('eq', "Successfully vehicle deleted");
+        // })      
+
+          
+        // cy.request({
+        //   method: 'PUT',
+        //   url: `${atLink}/deletecontact/${ele.contact_uuid}`,
+        //   headers: {
+        //     authorization: `bearer ${token}`
+        //   },
+        //   body: {
+        //     user_uuid: user_uuid
+        //   }
+        // }).then((res) => {
+        //   cy.wrap(res.body.message).should('eq', "Contacts deleted successfully");
+        // })
+
+
       // --- write your code for user above this;
     })
 

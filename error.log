@@ -1,2 +1,65 @@
 10/26/2023, 12:24:28 PM [ERROR]: Error in updating featureset: TypeError: Bind parameters must not contain undefined. To pass SQL NULL specify JS null
 10/26/2023, 12:53:03 PM [ERROR]: Error in updating featureset: TypeError: Bind parameters must not contain undefined. To pass SQL NULL specify JS null
+10/27/2023, 12:29:34 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 12:31:11 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 12:55:48 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:09:48 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:12:32 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:19:29 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:26:10 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:30:05 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:33:20 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:35:18 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 2:42:23 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
+10/27/2023, 3:00:09 PM [ERROR]: Error in adding vehicle: TypeError: Bind parameters must not contain undefined. To pass SQL NULL specify JS null
+10/27/2023, 3:06:27 PM [ERROR]: Error in adding vehicle: TypeError: Bind parameters must not contain undefined. To pass SQL NULL specify JS null
+10/27/2023, 4:01:36 PM [ERROR]: Error in updating the alert: Error: Incorrect arguments to mysqld_stmt_execute
+10/27/2023, 4:10:29 PM [ERROR]: Error in creating report: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+      GROUP BY
+        v.vehicle_uuid,
+        v.vehicle_name,
+        v.ve...' at line 23
